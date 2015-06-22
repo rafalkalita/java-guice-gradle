@@ -13,8 +13,6 @@ import java.util.List;
  */
 public class Application {
 
-    private Library library;
-
     public static void main(String[] args) {
 
         Injector injector = Guice.createInjector(new LibraryModule());

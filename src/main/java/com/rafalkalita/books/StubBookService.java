@@ -2,6 +2,7 @@ package com.rafalkalita.books;
 
 import com.rafalkalita.domain.Book;
 
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * A stub for bookService
  */
+@Singleton
 public class StubBookService implements BookService {
     @Override
     public List<Book> getBooks(long userId) {

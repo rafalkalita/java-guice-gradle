@@ -12,7 +12,6 @@ import java.util.List;
 /**
  * Manages books :)
  */
-@Singleton
 public class Library {
 
     private UserService userService;

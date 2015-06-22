@@ -4,10 +4,8 @@ import com.rafalkalita.books.BookService;
 import com.rafalkalita.domain.Book;
 import com.rafalkalita.users.UserService;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -15,12 +13,10 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;
 
-/**
- *
- */
+
 @RunWith(MockitoJUnitRunner.class)
 public class LibraryTest {
 
@@ -35,11 +31,6 @@ public class LibraryTest {
 
     @Mock
     private BookService bookService;
-
-    @Before
-    public void setUp() {
-        library = new Library(userService, bookService);
-    }
 
     @Test
     public void shouldRetrieveBookList() {
@@ -57,9 +48,9 @@ public class LibraryTest {
         List<Book> books = library.getBookList(USERNAME);
 
         // then
-        Assert.assertEquals(expectedBooks.get(0).getTitle(), books.get(0).getTitle());
-        Assert.assertEquals(expectedBooks.get(1).getTitle(), books.get(1).getTitle());
-        Assert.assertEquals(expectedBooks.get(2).getTitle(), books.get(2).getTitle());
+        assertEquals(expectedBooks.get(0).getTitle(), books.get(0).getTitle());
+        assertEquals(expectedBooks.get(1).getTitle(), books.get(1).getTitle());
+        assertEquals(expectedBooks.get(2).getTitle(), books.get(2).getTitle());
 
     }
 }

@@ -1,8 +1,11 @@
 package com.rafalkalita.users;
 
+import javax.inject.Singleton;
+
 /**
  * A stub for userService
  */
+@Singleton
 public class StubUsersService implements UserService{
     @Override
     public long getId(String username) {
